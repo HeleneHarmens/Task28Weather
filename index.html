@@ -16,8 +16,23 @@
     <div id="mapid"></div>
   </head>
   <body>
+    <div id="app">
+      <ul>
+        <li>
+          <a href="#" v-on:click="onClick">Bergen</a>
+        </li>
+        <li>
+          Oslo
+        </li>
+        <li>
+          Trondheim
+        </li>
+      </ul>
+    </div>
+
+    
     <script>
-      var mymap = L.map('mapid').setView([61, 8], 13);
+      var mymap = L.map("mapid").setView([61, 8], 13);
 
       L.tileLayer(
         "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
@@ -26,11 +41,22 @@
             'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
           id: "mapbox.streets",
-          accessToken: "pk.eyJ1IjoibGluZWFzIiwiYSI6ImNqdHBrd21icDAxaHI0NG41OGlwNm43bnoifQ.FX3CR_EALV1j7wC_1W4vkQ"
+          accessToken:
+            "pk.eyJ1IjoibGluZWFzIiwiYSI6ImNqdHBrd21icDAxaHI0NG41OGlwNm43bnoifQ.FX3CR_EALV1j7wC_1W4vkQ"
         }
       ).addTo(mymap);
 
-      var marker = L.marker([61, 8]).addTo(mymap);
+      for (var i = 0; i < markers.length; ++i) {
+        L.marker([markers[i].lat, markers[i].lng])
+          .bindPopup(
+            '<a href="' +
+              markers[i].name +
+              '" target="_blank">' +
+              markers[i].name +
+              "</a>"
+          )
+          .addTo(map);
+      }
     </script>
     <style>
       #mapid {
@@ -38,5 +64,10 @@
         width: 500px;
       }
     </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="markers.json"></script>
+  <script src = "app.js"></script>
   </body>
 </html>

@@ -1,0 +1,17 @@
+markers = [
+    {
+      "name": "Bergen",
+      "lat": 60.3943,
+      "lng": 5.3258
+    },
+    {
+      "name": "Oslo",
+      "lat": 59.91111,
+      "lng": 10.75278
+    },
+    {
+      "name": "Trondheim",
+      "lat": 63.4306,
+      "lng": 10.3952
+    }
+ ];

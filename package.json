@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/HeleneHarmens/Task28Weather#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.4",
     "leaflet": "^1.4.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "vue": "^2.6.10"
   }
 }
