@@ -13,10 +13,12 @@
       crossorigin=""
     ></script>
     <title>Cool</title>
-    <div id="mapid"></div>
+    
   </head>
   <body>
-    <div id="app">
+    <h1>Get your forecast!</h1>
+      <div id="mapid"></div>
+    <div id="location">
       <ul>
         <li>
           <a href ="#" onClick="mymap.setView([60.3943, 5.3258],8)">Bergen</a>
@@ -28,9 +30,12 @@
           <a href ="#" onClick="mymap.setView([63.4306, 10.3952],8)">Trondheim</a>
         </li>
       </ul>
+      </div>
     </div>
 
-    <script>
+  
+
+  <script>
       var mymap = L.map("mapid").setView([61, 8], 13);
 
       L.tileLayer(
@@ -44,7 +49,19 @@
             "pk.eyJ1IjoibGluZWFzIiwiYSI6ImNqdHBrd21icDAxaHI0NG41OGlwNm43bnoifQ.FX3CR_EALV1j7wC_1W4vkQ"
         }
       ).addTo(mymap);
+          
 
+      var request = new XMLHttpRequest()
+        let cityname = "Oslo"
+      request.open('GET', 'http://api.openweathermap.org/data/2.5/forecast?q=oslo&appid=6796724a94f12b9b9b866a4d4b0794b2&units=metric', true)
+      
+      request.onload = function (){
+
+        
+      }
+      
+      request.send()
+      
 
     </script>
 
@@ -53,8 +70,11 @@
         height: 500px;
         width: 500px;
       }
-    </style>
 
+      h1{
+        text-align: center;
+      }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
