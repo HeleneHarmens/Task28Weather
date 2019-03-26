@@ -1,4 +1,5 @@
-markers = [
+{
+    "markers": [
     {
       "name": "Bergen",
       "lat": 60.3943,
@@ -14,4 +15,5 @@ markers = [
       "lat": 63.4306,
       "lng": 10.3952
     }
- ];
+ ]
+}

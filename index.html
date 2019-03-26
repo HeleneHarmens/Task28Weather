@@ -19,18 +19,17 @@
     <div id="app">
       <ul>
         <li>
-          <a href="#" v-on:click="onClick">Bergen</a>
+          <a href ="#" onClick="mymap.setView([60.3943, 5.3258],8)">Bergen</a>
         </li>
         <li>
-          Oslo
+          <a href ="#" onClick="mymap.setView([59.91111, 10.75278],8)">Oslo</a>
         </li>
         <li>
-          Trondheim
+          <a href ="#" onClick="mymap.setView([63.4306, 10.3952],8)">Trondheim</a>
         </li>
       </ul>
     </div>
 
-    
     <script>
       var mymap = L.map("mapid").setView([61, 8], 13);
 
@@ -46,18 +45,9 @@
         }
       ).addTo(mymap);
 
-      for (var i = 0; i < markers.length; ++i) {
-        L.marker([markers[i].lat, markers[i].lng])
-          .bindPopup(
-            '<a href="' +
-              markers[i].name +
-              '" target="_blank">' +
-              markers[i].name +
-              "</a>"
-          )
-          .addTo(map);
-      }
+
     </script>
+
     <style>
       #mapid {
         height: 500px;
@@ -65,9 +55,7 @@
       }
     </style>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="markers.json"></script>
-  <script src = "app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>
