@@ -19,6 +19,7 @@
   "homepage": "https://github.com/HeleneHarmens/Task28Weather#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "leaflet": "^1.4.0",
     "nodemon": "^1.18.10"
   }
 }
