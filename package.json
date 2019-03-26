@@ -1,0 +1,24 @@
+{
+  "name": "task28weather",
+  "version": "1.0.0",
+  "description": "Task 28 - Weather App",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeleneHarmens/Task28Weather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeleneHarmens/Task28Weather/issues"
+  },
+  "homepage": "https://github.com/HeleneHarmens/Task28Weather#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
+  }
+}
